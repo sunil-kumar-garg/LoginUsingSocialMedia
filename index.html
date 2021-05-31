@@ -6,10 +6,6 @@
 </head>
 <body>
 
-
-
-<!-- The JS SDK Login Button -->
-
 <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
 </fb:login-button>
 
@@ -21,11 +17,14 @@
 <!-- Load the JS SDK asynchronously -->
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
   
- <script src="https://apis.google.com/js/platform.js" async defer></script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
 
 <meta name="google-signin-client_id" content="663312442457-1jb1tj66kjn55j5l3n65agj1jjeao6lh.apps.googleusercontent.com">
 
 <div class="g-signin2" data-onsuccess="onSignIn"></div>
+
+<div id="Google_status">
+</div>
 
 <script>
 function onSignIn(googleUser) {
@@ -34,6 +33,8 @@ function onSignIn(googleUser) {
   console.log('Name: ' + profile.getName());
   console.log('Image URL: ' + profile.getImageUrl());
   console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+  document.getElementById('Google_status').innerHTML =
+        'Thanks for logging in, ' + profile.getName() + '!' + " Your Email-ID: " + profile.getEmail();
 }
 </script>
 </body>
