@@ -5,5 +5,9 @@
 - Add the domain name in App in developer account.
 - Only the administrator or a person with role in App (can be assigned from developers account) can use the website that is in development stage.
 
+Note: The access code that website gets can be used from anywhere to access those resources. Facebook does not check the source of the request.
+
 # How to integrate google login to the website
 - It is almost same step as above.
+
+Note: Google checks the source of the request and if the access code is used anywhere else, request fails.
